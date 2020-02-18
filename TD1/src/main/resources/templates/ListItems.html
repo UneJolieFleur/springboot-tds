@@ -1,0 +1,12 @@
+{{> /main/header}}
+ <h1>Liste des items</h1>
+
+{{# listItems}}
+	{{nom}}
+	{{evaluation}}
+{{/listItems}}
+
+<button type="button"><a href="/items/new">
+    add
+</button>
+{{> /main/footer}}
