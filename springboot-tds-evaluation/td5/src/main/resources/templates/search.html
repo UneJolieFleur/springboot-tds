@@ -1,0 +1,59 @@
+{{ >body/header}}
+<v-app>
+    <v-content>
+        <v-container fluid>
+            <h1>Recherche</h1>
+            <v-row align="center">
+                <v-col class="d-flex" cols="6">
+                    <v-select
+                            :items="choices"
+                            label="Rechercher par..."
+                            v-model="id"
+                    ></v-select>
+                </v-col>
+                <v-col class="d-flex" cols="6">
+                    <v-text-field
+                            label="Contient..."
+                            v-model="s"
+                    ></v-text-field>
+                </v-col>
+            </v-row>
+            <v-row fluid>
+                <v-col>
+                    <v-checkbox v-model="selected" label="Titre" value="Titre;title"></v-checkbox>
+                </v-col>
+                <v-col>
+                    <v-checkbox v-model="selected" label="Description" value="Description;description"></v-checkbox>
+                </v-col>
+                <v-col>
+                    <v-checkbox v-model="selected" label="Categorie" value="Categorie;category.name"></v-checkbox>
+                </v-col>
+                <v-col>
+                    <v-checkbox v-model="selected" label="Langage" value="Langage;language.name"></v-checkbox>
+                </v-col>
+            </v-row>
+            <v-data-table
+                    :headers="headers"
+                    :items="scripts"
+                    sort-by="title"
+                    class="elevation-1"
+                    xmlns:v-slot="http://www.w3.org/1999/XSL/Transform"
+            >
+                <template v-slot:item.category.name="{ item }">
+                    <v-icon small color="blue" class="mr-2" @click="searchByCategory(item.category.name)">
+                        fas fa-search
+                    </v-icon>
+                    <%item.category.name%>
+                </template>
+                <template v-slot:item.language.name="{ item }">
+                    <v-icon small color="blue" class="mr-2" @click="searchByLanguage(item.language.name)">
+                        fas fa-search
+                    </v-icon>
+                    <%item.language.name%>
+                </template>
+            </v-data-table>
+        </v-container>
+    </v-content>
+</v-app>
+{{ >body/footer}}
+{{{vue}}}

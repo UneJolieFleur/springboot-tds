@@ -1,0 +1,44 @@
+{{>/../main/header}}
+<div class="ui container">
+    <form class="ui form" action="/scripts/submit{{id}}" method="post">
+        <div class="field">
+            <label>Title</label>
+            <input type="text" name="title" value="{{script.title}}">
+        </div>
+        <div class="field">
+            <label>Description</label>
+            <textarea type="text" name="description" >{{script.description}}</textarea>
+        </div>
+        <div class="field">
+            <label>Content</label>
+            <textarea name="content">{{script.content}}</textarea>
+        </div>
+        <div class="field">
+            <label>Creation date</label>
+            <input type="date" name="creationDate" value="{{script.creationDate}}">
+        </div>
+        <div class="field">
+            <label>Category</label>
+            <select class="ui fluid search dropdown" name="category">
+                {{#categories}}
+                <option value="{{name}}">{{name}}</option>
+                {{/categories}}
+            </select>
+        </div>
+        <div class="field">
+            <label>Language</label>
+            <select class="ui fluid search dropdown" name="language">
+                {{#languages}}
+                <option value="{{name}}">{{name}}</option>
+                {{/languages}}
+            </select>
+        </div>
+        <div class="field">
+            <label>Comment</label>
+            <textarea name="comment"></textarea>
+        </div>
+        <button class="ui positive button" type="submit">Confirm modification(s)</button>
+        <a href="index" class="ui negative button">Cancel modification(s)</a>
+    </form>
+</div>
+{{>/../main/footer}}

@@ -1,0 +1,24 @@
+{{>/main/header}}
+<div class="ui container">
+    <form class="ui form" action="/signup" method="post">
+        <div class="field">
+            <label>Identity</label>
+            <input type="text" name="identity" placeholder="Your identity..." required>
+        </div>
+        <div class="field">
+            <label>Login</label>
+            <input type="text" name="login" placeholder="Your login..." required>
+        </div>
+        <div class="field">
+            <label>Email</label>
+            <input type="email" name="email" placeholder="Your email..." required>
+        </div>
+        <div class="field">
+            <label>Password</label>
+            <input type="password" name="password" placeholder="Your password..." required>
+        </div>
+        <button class="ui positive button center" type="submit">Sign up</button>
+        <a href="/index" class="ui button center" tabindex="0">Connect</a>
+    </form>
+</div>
+{{>/main/footer}}

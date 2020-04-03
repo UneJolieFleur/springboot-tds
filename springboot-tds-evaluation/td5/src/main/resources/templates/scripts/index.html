@@ -1,0 +1,31 @@
+{{>/../main/header}}
+<div>
+    <p><h3>Informations</h3></p>
+    <p><b>Indentity : </b>{{user.identity}}</p>
+    <p><b>Email : </b>{{user.email}}</p>
+    <p><a href="new" class="ui primary button">New script</a></p>
+    <p><a href="/searchall" class="ui primari button">Search scipts</a></p>
+    <p><a href="logout" class="ui negative button">Logout</a></p>
+    <table class="ui celled table">
+        <thead>
+            <tr><th colspan="4">
+                Scripts
+            </tr>
+          <tr><th>Title</th>
+          <th>Description</th>
+          <th>Creation date</th>
+          <th></th>
+        </tr></thead>
+        <tbody>
+          {{#user.scripts}}
+            <tr>
+                <td>{{title}}</td>
+                <td>{{description}}</td>
+                <td>{{creationDate}}</td>
+                <td><a href="/scripts/{{id}}" class="ui button"><i class="edit icon"></i></a></td>
+            </tr>
+          {{/user.scripts}}
+        </tbody>
+      </table>
+</div>
+{{>/../main/footer}}
