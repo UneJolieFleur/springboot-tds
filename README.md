@@ -1,6 +1,6 @@
 # Springboot tds
 
-Voici les trvaux que j'ai réalisé en TD de springboot en IUT
+Voici les travaux que j'ai réalisé en TD de springboot en IUT
 
 
 ## Author
